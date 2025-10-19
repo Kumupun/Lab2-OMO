@@ -27,10 +27,8 @@ def quad(x0):
                 sum_ += S[p, i] * D[p] * S[p, j]
             S[i, j] = (A[i, j] - sum_) / (D[i] * S[i, i])
 
-    print("Матриця S:")
-    print(np.round(S, 6))
-    print("\nМатриця D:")
-    print(np.diag(D))
+    print("Матриця S: \n", np.round(S, 6))
+    print(f"\nМатриця D: \n{np.diag(D)}")
 
     y = np.linalg.solve(S, b)
     x = np.linalg.solve(S.T, y)
